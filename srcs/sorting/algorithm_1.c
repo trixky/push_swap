@@ -15,12 +15,27 @@ int		ft_find_below_b(int nbr, t_piles *piles)
 	return (below);
 }
 
+int		ft_find_above_a(int nbr, t_piles *piles)
+{
+	int i;
+	int above;
+	
+	i = -1;
+	above = ft_find_greatest_index(piles, PILE_A);
+	while (++i < piles->a_len)
+		if (piles->a[i] < piles->a[above] && piles->a[i] > nbr)
+			above = i;
+	if (piles->a[above] < nbr)
+		above = ft_find_smallest_index(piles, PILE_A);
+	return (above);
+}
+
 void	ft_rotate_sort_pile(t_piles *piles, const int pile)
 {		
 	if (ft_find_greatest_index(piles, pile) < (pile == PILE_A ? piles->a_len : piles->b_len) / 2)
 		pile == PILE_A ? ft_operation_rotate_ra_x_time(piles, ft_find_greatest_index(piles, pile)) : ft_operation_rotate_rb_x_time(piles, ft_find_greatest_index(piles, pile));
 	else
-		pile == PILE_A ? ft_operation_revers_rra_x_time(piles, piles->capacity - ft_find_greatest_index(piles, pile)) : ft_operation_revers_rrb_x_time(piles, piles->capacity - ft_find_greatest_index(piles, pile));
+		pile == PILE_A ? ft_operation_revers_rra_x_time(piles, piles->a_len - ft_find_greatest_index(piles, pile)) : ft_operation_revers_rrb_x_time(piles, piles->b_len - ft_find_greatest_index(piles, pile));
 }
 
 void	ft_smart_push_pb_ra(int index, t_piles *piles)
@@ -121,11 +136,50 @@ int		ft_best_move(t_piles *piles)
 	return (best_move_index_rra);
 }
 
+void	ft_smart_push_pa_ra(t_piles *piles)
+{
+	while (piles->b_len > 0)
+	{
+		while (0 != ft_find_above_a(piles->b[0], piles))
+			ft_operation_rotate_ra(piles);
+		ft_operation_push_pa(piles);
+	}
+}
+
+void	ft_smart_push_pa_rra(t_piles *piles)
+{
+	while (piles->b_len > 0)
+	{
+		while (0 != ft_find_above_a(piles->b[0], piles))
+			ft_operation_revers_rra(piles);
+		ft_operation_push_pa(piles);
+	}
+}
+
+/* new */
 void	ft_trixky_sort(t_piles *piles)
 {
-	while (piles->a_len != 0)
+	// while (piles->a_len > 5)
+	while (piles->a_len > 5)
 		ft_best_move(piles);
 	ft_rotate_sort_pile(piles, PILE_B);
-	while (piles->b_len != 0)
-		ft_operation_push_pa(piles);
+	ft_brute_force_sort(piles);
+	ft_show_piles(piles);
+	// ft_smart_push_pa_ra(piles);
+	ft_smart_push_pa_rra(piles);
 }
+
+// void	ft_trixky_sort(t_piles *piles)
+// {
+// 	// while (piles->a_len > 5)
+// 	while (piles->a_len != 0)
+// 		ft_best_move(piles);
+// 	ft_rotate_sort_pile(piles, PILE_B);
+// 	// ft_brute_force_sort(piles);
+// 	// ft_show_piles(piles);
+// 	// ft_smart_push_pa(piles);
+// 	while (piles->b_len != 0)
+// 		ft_operation_push_pa(piles);
+// 	// while (piles->b_len != 0)
+// 	// 	ft_smart_push_pa(piles);
+// }
