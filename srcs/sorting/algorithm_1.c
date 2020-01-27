@@ -156,7 +156,7 @@ void	ft_smart_push_pa_rra(t_piles *piles)
 	}
 }
 
-/* new */
+/* new */ /* !!!!!!!!!!!!!!!!!!!!!!!!!!! il faut juste remettre a l'endroit la pille A a la fin */
 void	ft_trixky_sort(t_piles *piles)
 {
 	// while (piles->a_len > 5)
@@ -167,14 +167,15 @@ void	ft_trixky_sort(t_piles *piles)
 	ft_show_piles(piles);
 	// ft_smart_push_pa_ra(piles);
 	ft_smart_push_pa_rra(piles);
+	// ft_brute_force_sort(piles);
+	
 }
-
+/* ancien */ /* fonctionne ... */
 // void	ft_trixky_sort(t_piles *piles)
 // {
 // 	// while (piles->a_len > 5)
 // 	while (piles->a_len != 0)
 // 		ft_best_move(piles);
-// 	ft_rotate_sort_pile(piles, PILE_B);
 // 	// ft_brute_force_sort(piles);
 // 	// ft_show_piles(piles);
 // 	// ft_smart_push_pa(piles);
