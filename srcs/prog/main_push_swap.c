@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 		if (piles.capacity < 6)
 			ft_brute_force_sort(&piles);
 		else
-			ft_trixky_sort(&piles);
+			ft_insertion_sort(&piles);
 	}
 	ft_show_piles(&piles);										/* show */
 	printf("nombre d'operation = %d\n", piles.nbr_operation);	/* show */

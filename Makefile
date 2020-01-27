@@ -19,8 +19,8 @@ COMMON_SRCS =	srcs/cost_calculator/cost_calculator.c\
 				srcs/operation/operation_swap.c\
 				srcs/prog/checker.c\
 				srcs/prog/init.c\
-				srcs/sorting/algorithm_1.c\
-				srcs/sorting/algorithm_2.c\
+				srcs/sorting/brute_force_sort.c\
+				srcs/sorting/insertion_sort.c\
 				srcs/sorting/sort_tools_1.c\
 				srcs/sorting/sort_tools_2.c\
 				srcs/sorting/sort_tools_3.c\

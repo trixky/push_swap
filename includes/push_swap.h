@@ -115,7 +115,7 @@ void	ft_check_argv_input(t_piles *piles);
 
 /* --------------------------------------------------------------- srcs/sorting */
 /* ---------------------- prototypes: alogirth_1.c */
-void	ft_trixky_sort(t_piles *piles);
+void	ft_insertion_sort(t_piles *piles);
 
 /* ---------------------- prototypes: alogirth_2.c */
 void	ft_brute_force_sort(t_piles *piles);

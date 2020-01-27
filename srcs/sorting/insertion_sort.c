@@ -156,7 +156,7 @@ void	ft_smart_push_pa_rra(t_piles *piles)
 	}
 }
 
-void	ft_trixky_sort_with_brute_force(t_piles *piles)
+void	ft_insertion_sort_with_brute_force(t_piles *piles)
 {
 	while (piles->a_len > 5)
 		ft_best_move(piles);
@@ -168,7 +168,7 @@ void	ft_trixky_sort_with_brute_force(t_piles *piles)
 	printf("with ...\n");
 }
 
-void	ft_trixky_sort_without_brute_force(t_piles *piles)
+void	ft_insertion_sort_without_brute_force(t_piles *piles)
 {
 	while (piles->a_len != 0)
 		ft_best_move(piles);
@@ -179,10 +179,10 @@ void	ft_trixky_sort_without_brute_force(t_piles *piles)
 	printf("without ...\n");
 }
 
-void	ft_trixky_sort(t_piles *piles)
+void	ft_insertion_sort(t_piles *piles)
 {
 	if (piles->capacity < 50)
-		ft_trixky_sort_with_brute_force(piles);
+		ft_insertion_sort_with_brute_force(piles);
 	else
-		ft_trixky_sort_without_brute_force(piles);
+		ft_insertion_sort_without_brute_force(piles);
 }
