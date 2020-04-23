@@ -21,10 +21,10 @@ int main(int argc, char **argv)
 	srand(time(NULL));
 	rdm = rand() % SEED_GENERATOR;
 	if (argc != 2)
-		ft_exit(NULL, "generator : please enter one arg...\n");
+		ft_exit(NULL);
 	len = ft_str_to_int(NULL, argv[1]);
 	if ((number_used = malloc(sizeof(int) * len)) == NULL)
-		ft_exit(NULL, "generator : malloc return NULL...\n");
+		ft_exit(NULL);
 	i = -1;
 	while (++i < len)
 	{

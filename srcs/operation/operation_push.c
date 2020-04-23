@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int		ft_operation_push_pa(t_piles *piles)
+void	ft_operation_push_pa(t_piles *piles)
 {
 	int i;
 	
@@ -19,10 +19,9 @@ int		ft_operation_push_pa(t_piles *piles)
 	piles->nbr_operation++;
 	if (!piles->silence_mod)
 		ft_putstr_fd(STDOUT_FILENO, "pa\n");
-	return (1);
 }
 
-int		ft_operation_push_pb(t_piles *piles)
+void	ft_operation_push_pb(t_piles *piles)
 {
 	int i;
 	
@@ -41,5 +40,4 @@ int		ft_operation_push_pb(t_piles *piles)
 	piles->nbr_operation++;
 		if (!piles->silence_mod)
 	ft_putstr_fd(STDOUT_FILENO, "pb\n");
-	return (1);
 }

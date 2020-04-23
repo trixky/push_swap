@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int		ft_operation_rotate_ra(t_piles *piles)
+void	ft_operation_rotate_ra(t_piles *piles)
 {
 	int	i;
 	int	save_first;
@@ -16,10 +16,9 @@ int		ft_operation_rotate_ra(t_piles *piles)
 	piles->nbr_operation++;
 		if (!piles->silence_mod)
 	ft_putstr_fd(STDOUT_FILENO, "ra\n");
-	return (1);
 }
 
-int		ft_operation_rotate_rb(t_piles *piles)
+void	ft_operation_rotate_rb(t_piles *piles)
 {
 	int	i;
 	int	save_first;
@@ -35,10 +34,9 @@ int		ft_operation_rotate_rb(t_piles *piles)
 	piles->nbr_operation++;
 		if (!piles->silence_mod)
 	ft_putstr_fd(STDOUT_FILENO, "rb\n");
-	return (1);
 }
 
-int		ft_operation_rotate_rr(t_piles *piles)
+void	ft_operation_rotate_rr(t_piles *piles)
 {
 	int initial_silent_mod;
 	
@@ -50,5 +48,4 @@ int		ft_operation_rotate_rr(t_piles *piles)
 	piles->nbr_operation--;
 	if (!piles->silence_mod)
 		ft_putstr_fd(STDOUT_FILENO, "rr\n");
-	return (1);
 }

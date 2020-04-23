@@ -38,13 +38,13 @@ void	ft_input_args(int argc, char **argv, t_piles *piles)
 {
 	piles->capacity = ft_input_args_insert_number(argc, argv, piles, FALSE);
 	if ((piles->a = malloc(sizeof(int) * piles->capacity)) == NULL)
-		ft_exit(piles, "malloc() : return NULL...");
+		ft_exit(piles);
 	if ((piles->b = malloc(sizeof(int) * piles->capacity)) == NULL)
-		ft_exit(piles, "malloc() : return NULL...");
+		ft_exit(piles);
 	if ((piles->a_temp = malloc(sizeof(int) * piles->capacity)) == NULL)
-		ft_exit(piles, "malloc() : return NULL...");
+		ft_exit(piles);
 	if ((piles->b_temp = malloc(sizeof(int) * piles->capacity)) == NULL)
-		ft_exit(piles, "malloc() : return NULL...");
+		ft_exit(piles);
 	piles->a_len = piles->capacity;
 	piles->b_len = 0;
 	ft_input_args_insert_number(argc, argv, piles, TRUE);

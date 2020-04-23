@@ -87,23 +87,23 @@ int		ft_first_is_the_smallest(t_piles *piles, const int pile);
 int		ft_first_is_the_greatest(t_piles *piles, const int pile);
 
 /* ---------------------- prototypes: operation_push.c */
-int		ft_operation_push_pa(t_piles *piles);
-int		ft_operation_push_pb(t_piles *piles);
+void	ft_operation_push_pa(t_piles *piles);
+void	ft_operation_push_pb(t_piles *piles);
 
 /* ---------------------- prototypes: operation_revers.c */
-int		ft_operation_revers_rra(t_piles *piles);
-int		ft_operation_revers_rrb(t_piles *piles);
-int		ft_operation_revers_rrr(t_piles *piles);
+void	ft_operation_revers_rra(t_piles *piles);
+void	ft_operation_revers_rrb(t_piles *piles);
+void	ft_operation_revers_rrr(t_piles *piles);
 
 /* ---------------------- prototypes: operation_rotate.c */
-int		ft_operation_rotate_ra(t_piles *piles);
-int		ft_operation_rotate_rb(t_piles *piles);
-int		ft_operation_rotate_rr(t_piles *piles);
+void	ft_operation_rotate_ra(t_piles *piles);
+void	ft_operation_rotate_rb(t_piles *piles);
+void	ft_operation_rotate_rr(t_piles *piles);
 
 /* ---------------------- prototypes: operation_swap.c */
-int		ft_operation_swap_sa(t_piles *piles);
-int		ft_operation_swap_sb(t_piles *piles);
-int		ft_operation_swap_ss(t_piles *piles);
+void	ft_operation_swap_sa(t_piles *piles);
+void	ft_operation_swap_sb(t_piles *piles);
+void	ft_operation_swap_ss(t_piles *piles);
 
 /* --------------------------------------------------------------- srcs/prog */
 /* ---------------------- prototypes: init.c */
@@ -145,15 +145,16 @@ int		ft_find_greatest_index(t_piles *piles, const int pile);
 int		ft_strlen(char *str);
 int		ft_putstr_fd(int fd, char *str);
 int		ft_putchar_fd(int fd, char c);
-void	ft_putnbr(int nb);
+void	ft_check_minus_alone(t_piles *piles, char *str);
 int		ft_str_to_int(t_piles *piles, char *str);
 
 /* ---------------------- prototypes: utils_2.c */
 void	*ft_free(void *ptr);
 void	ft_swap_int(int *a, int *b);
+void	ft_putnbr(int nb);
 
 /* ---------------------- prototypes: utils_exit.c */
-void	ft_exit(t_piles *piles, char *str);
+void	ft_exit(t_piles *piles);
 void	ft_free_piles(t_piles *piles);
 
 /* ---------------------- prototypes: utils_input.c */

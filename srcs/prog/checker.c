@@ -11,6 +11,6 @@ void	ft_check_argv_input(t_piles *piles)
 		j = i;
 		while (++j < piles->capacity)
 			if (piles->a[i] == piles->a[j])
-				ft_exit(piles, "ft_check_argv_input() : duplicate numbers are present\n");
+				ft_exit(piles);
 	}
 }

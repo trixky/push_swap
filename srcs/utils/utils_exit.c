@@ -11,11 +11,9 @@ void	ft_free_piles(t_piles *piles)
 	}
 }
 
-void	ft_exit(t_piles *piles, char *str)
+void	ft_exit(t_piles *piles)
 {
 	ft_free_piles(piles);
-	ft_putstr_fd(STDERR_FILENO, "ERROR: ");
-	ft_putstr_fd(STDERR_FILENO, str);
-	ft_putstr_fd(STDERR_FILENO, "\n");
+	ft_putstr_fd(STDERR_FILENO, "Error\n");
 	exit(EXIT_FAILURE);
 }

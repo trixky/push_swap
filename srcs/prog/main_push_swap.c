@@ -15,9 +15,9 @@ int main(int argc, char **argv)
 		else
 			ft_insertion_sort(&piles);
 	}
-	ft_show_piles(&piles);										/* show */
-	printf("nombre d'operation = %d\n", piles.nbr_operation);	/* show */
-	ft_is_sorted_down(&piles, PILE_A, FALSE);					/* show */
+	// ft_show_piles(&piles);										/* show */
+	// printf("nombre d'operation = %d\n", piles.nbr_operation);	/* show */
+	// ft_is_sorted_down(&piles, PILE_A, FALSE);					/* show */
 	ft_free_piles(&piles);
 	return (EXIT_SUCCESS);
 }

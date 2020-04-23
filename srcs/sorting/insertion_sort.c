@@ -162,21 +162,17 @@ void	ft_insertion_sort_with_brute_force(t_piles *piles)
 		ft_best_move(piles);
 	ft_rotate_sort_pile(piles, PILE_B);
 	ft_brute_force_sort(piles);
-	ft_show_piles(piles);
 	ft_smart_push_pa_rra(piles);
 	ft_rotate_sort_pile(piles, PILE_A);
-	printf("with ...\n");
 }
 
 void	ft_insertion_sort_without_brute_force(t_piles *piles)
 {
 	while (piles->a_len != 0)
 		ft_best_move(piles);
-	ft_show_piles(piles);
 	ft_rotate_sort_pile(piles, PILE_B);	
 	while (piles->b_len != 0)
 		ft_operation_push_pa(piles);
-	printf("without ...\n");
 }
 
 void	ft_insertion_sort(t_piles *piles)

@@ -56,7 +56,7 @@ clean:
 	rm -rf $(CHECKER_OBJ) $(PUSH_SWAP_OBJ)
 
 fclean: clean
-	rm -rf ${NAME_CHECKER} ${NAME_PUSH_SWAP}
+	rm -rf ${NAME_CHECKER} ${NAME_PUSH_SWAP} ${NAME_GENERATOR}
 
 re: fclean all
 
