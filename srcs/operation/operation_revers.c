@@ -14,8 +14,11 @@ void	ft_operation_revers_rra(t_piles *piles)
 		piles->a[0] = save_first;
 	}
 	piles->nbr_operation++;
-		if (!piles->silence_mod)
-	ft_putstr_fd(STDOUT_FILENO, "rra\n");
+	if (!piles->silence_mod)
+	{
+		ft_putstr_fd(STDOUT_FILENO, "rra\n");
+		ft_vn_activate(piles);
+	}
 }
 
 void	ft_operation_revers_rrb(t_piles *piles)
@@ -32,8 +35,11 @@ void	ft_operation_revers_rrb(t_piles *piles)
 		piles->b[0] = save_first;
 	}
 	piles->nbr_operation++;
-		if (!piles->silence_mod)
-	ft_putstr_fd(STDOUT_FILENO, "rrb\n");
+	if (!piles->silence_mod)
+	{
+		ft_putstr_fd(STDOUT_FILENO, "rrb\n");
+		ft_vn_activate(piles);
+	}
 }
 
 void	ft_operation_revers_rrr(t_piles *piles)
@@ -47,5 +53,8 @@ void	ft_operation_revers_rrr(t_piles *piles)
 	piles->silence_mod = initial_silent_mod;	
 	piles->nbr_operation--;
 	if (!piles->silence_mod)
+	{
 		ft_putstr_fd(STDOUT_FILENO, "rrr\n");
+		ft_vn_activate(piles);
+	}
 }

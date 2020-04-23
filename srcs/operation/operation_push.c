@@ -18,7 +18,10 @@ void	ft_operation_push_pa(t_piles *piles)
 	}
 	piles->nbr_operation++;
 	if (!piles->silence_mod)
+	{
 		ft_putstr_fd(STDOUT_FILENO, "pa\n");
+		ft_vn_activate(piles);
+	}
 }
 
 void	ft_operation_push_pb(t_piles *piles)
@@ -38,6 +41,9 @@ void	ft_operation_push_pb(t_piles *piles)
 		piles->a_len--;
 	}
 	piles->nbr_operation++;
-		if (!piles->silence_mod)
-	ft_putstr_fd(STDOUT_FILENO, "pb\n");
+	if (!piles->silence_mod)
+	{
+		ft_putstr_fd(STDOUT_FILENO, "pb\n");
+		ft_vn_activate(piles);
+	}
 }

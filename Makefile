@@ -28,6 +28,7 @@ COMMON_SRCS =	srcs/cost_calculator/cost_calculator.c\
 				srcs/utils/utils_2.c\
 				srcs/utils/utils_exit.c\
 				srcs/utils/utils_input.c\
+				srcs/utils/utils_options.c\
 				srcs/utils/utils_show.c
 
 CHECKER_OBJ = $(COMMON_SRCS:.c=.o) $(CHECKER_SRCS:.c=.o)

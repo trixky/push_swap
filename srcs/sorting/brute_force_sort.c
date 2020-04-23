@@ -71,12 +71,14 @@ void		ft_brute_force_application(t_piles *piles)
 	
 	i = -1;
 	while (++i < BRUT_FORCE_ARRAY_SIZE && piles->brute_force_array_save[i] != NOTHING)
+	{
 		if (piles->brute_force_array_save[i] == SA)
 			ft_operation_swap_sa(piles);
 		else if (piles->brute_force_array_save[i] == RA)
 			ft_operation_rotate_ra(piles);
 		else if (piles->brute_force_array_save[i] == RRA)
 			ft_operation_revers_rra(piles);
+	}
 }
 
 void	ft_recursive(t_piles *piles, const int deep)

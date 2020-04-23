@@ -14,8 +14,11 @@ void	ft_operation_rotate_ra(t_piles *piles)
 		piles->a[piles->a_len - 1] = save_first;
 	}
 	piles->nbr_operation++;
-		if (!piles->silence_mod)
-	ft_putstr_fd(STDOUT_FILENO, "ra\n");
+	if (!piles->silence_mod)
+	{
+		ft_putstr_fd(STDOUT_FILENO, "ra\n");
+		ft_vn_activate(piles);
+	}
 }
 
 void	ft_operation_rotate_rb(t_piles *piles)
@@ -32,8 +35,11 @@ void	ft_operation_rotate_rb(t_piles *piles)
 		piles->b[piles->b_len - 1] = save_first;
 	}
 	piles->nbr_operation++;
-		if (!piles->silence_mod)
-	ft_putstr_fd(STDOUT_FILENO, "rb\n");
+	if (!piles->silence_mod)
+	{
+		ft_putstr_fd(STDOUT_FILENO, "rb\n");
+		ft_vn_activate(piles);
+	}
 }
 
 void	ft_operation_rotate_rr(t_piles *piles)
@@ -47,5 +53,8 @@ void	ft_operation_rotate_rr(t_piles *piles)
 	piles->silence_mod = initial_silent_mod;
 	piles->nbr_operation--;
 	if (!piles->silence_mod)
+	{
 		ft_putstr_fd(STDOUT_FILENO, "rr\n");
+		ft_vn_activate(piles);
+	}
 }

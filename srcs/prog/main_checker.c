@@ -131,7 +131,7 @@ int main(int argc, char **argv)
 		exit(EXIT_SUCCESS);
 	ft_init(&piles);
 	piles.silence_mod = TRUE;
-	ft_input_args(argc, argv, &piles);
+	ft_input_args(argc, argv, &piles, 0);
 	ft_check_argv_input(&piles);
 
 	buffer_len = 0;

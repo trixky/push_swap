@@ -11,13 +11,13 @@ int		ft_next_number_in_str(char *str)
 	return (i);
 }
 
-int		ft_input_args_insert_number(int argc, char **argv, t_piles *piles, int insert_mod)
+int		ft_input_args_insert_number(int argc, char **argv, t_piles *piles, int insert_mod, int options_number)
 {
 	int	i;
 	int j;
 	int k;
 	
-	i = 0;
+	i = options_number;
 	k = 0;
 	while (i < argc - 1)
 	{
@@ -34,9 +34,33 @@ int		ft_input_args_insert_number(int argc, char **argv, t_piles *piles, int inse
 	return (k);
 }
 
-void	ft_input_args(int argc, char **argv, t_piles *piles)
+int		ft_input_args_insert_number_file(char *file_name, t_piles *piles, int insert_mod)
 {
-	piles->capacity = ft_input_args_insert_number(argc, argv, piles, FALSE);
+	int		i;
+	int 	k;
+	int		fd;
+	int		ret;
+	char	buffer_file[BUFFER_FILE_SIZE + 1];
+	
+	i = 0;
+	k = 0;
+	if ((fd = open(file_name, O_RDONLY)) <= 0)
+		ft_exit(piles);
+	if ((ret = read(fd, buffer_file, BUFFER_FILE_SIZE)) >= BUFFER_FILE_SIZE)
+		ft_exit(piles);
+	while (i < ret)
+	{
+		if (insert_mod)
+			piles->a[k] = ft_str_to_int(piles, buffer_file + i);
+		i += ft_next_number_in_str(buffer_file + i);
+		k++;
+	}
+	return (k);
+}
+
+void	ft_input_args(int argc, char **argv, t_piles *piles, int options_number)
+{
+	piles->capacity = ft_input_args_insert_number(argc, argv, piles, FALSE, options_number);
 	if ((piles->a = malloc(sizeof(int) * piles->capacity)) == NULL)
 		ft_exit(piles);
 	if ((piles->b = malloc(sizeof(int) * piles->capacity)) == NULL)
@@ -47,5 +71,21 @@ void	ft_input_args(int argc, char **argv, t_piles *piles)
 		ft_exit(piles);
 	piles->a_len = piles->capacity;
 	piles->b_len = 0;
-	ft_input_args_insert_number(argc, argv, piles, TRUE);
+	ft_input_args_insert_number(argc, argv, piles, TRUE, options_number);
+}
+
+void	ft_input_args_file(int file_name, t_piles *piles, char **argv)
+{
+	piles->capacity = ft_input_args_insert_number_file(argv[file_name], piles, FALSE);
+	if ((piles->a = malloc(sizeof(int) * piles->capacity)) == NULL)
+		ft_exit(piles);
+	if ((piles->b = malloc(sizeof(int) * piles->capacity)) == NULL)
+		ft_exit(piles);
+	if ((piles->a_temp = malloc(sizeof(int) * piles->capacity)) == NULL)
+		ft_exit(piles);
+	if ((piles->b_temp = malloc(sizeof(int) * piles->capacity)) == NULL)
+		ft_exit(piles);
+	piles->a_len = piles->capacity;
+	piles->b_len = 0;
+	ft_input_args_insert_number_file(argv[file_name], piles, TRUE);
 }

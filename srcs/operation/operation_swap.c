@@ -5,8 +5,11 @@ void	ft_operation_swap_sa(t_piles *piles)
 	if (piles->a_len > 2)
 		ft_swap_int(&piles->a[0], &piles->a[1]);
 	piles->nbr_operation++;
-		if (!piles->silence_mod)
-	ft_putstr_fd(STDOUT_FILENO, "sa\n");
+	if (!piles->silence_mod)
+	{
+		ft_putstr_fd(STDOUT_FILENO, "sa\n");
+		ft_vn_activate(piles);
+	}
 }
 
 void	ft_operation_swap_sb(t_piles *piles)
@@ -14,8 +17,11 @@ void	ft_operation_swap_sb(t_piles *piles)
 	if (piles->b_len > 2)
 		ft_swap_int(&piles->b[0], &piles->b[1]);
 	piles->nbr_operation++;
-		if (!piles->silence_mod)
-	ft_putstr_fd(STDOUT_FILENO, "sb\n");
+	if (!piles->silence_mod)
+	{
+		ft_putstr_fd(STDOUT_FILENO, "sb\n");
+		ft_vn_activate(piles);
+	}
 }
 
 void	ft_operation_swap_ss(t_piles *piles)
@@ -29,5 +35,8 @@ void	ft_operation_swap_ss(t_piles *piles)
 	piles->silence_mod = initial_silent_mod;	
 	piles->nbr_operation--;
 	if (!piles->silence_mod)
+	{
 		ft_putstr_fd(STDOUT_FILENO, "ss\n");
+		ft_vn_activate(piles);
+	}
 }

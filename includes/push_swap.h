@@ -8,19 +8,23 @@
 
 # include <unistd.h>
 # include <sys/types.h>
+# include <sys/stat.h>
 # include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
 
 
 /* a ENLEVER !!! */
-#include <stdio.h>
+# include <stdio.h>
 # include <time.h>
-#include <sys/time.h>
+# include <sys/time.h>
 /* a ENLEVER ^^^ */
 
 # define INT_MAX				2147483647
 # define INT_MIN				-2147483648
+
+# define BUFFER_FILE_SIZE		20000
 
 # define ERROR					-1
 # define FALSE					0
@@ -35,6 +39,12 @@
 # define SEED_GENERATOR 		33333
 # define RAND_MODULO			600
 # define BRUT_FORCE_ARRAY_SIZE	12
+
+# define OPTION_V				1
+# define OPTION_C				10
+# define OPTION_H				100
+# define OPTION_N				1000
+# define OPTION_F				10000
 
 // # define NOTHING				0
 // # define SA						1
@@ -60,6 +70,7 @@
 
 typedef struct	s_piles
 {
+	int		options;
 	int		silence_mod;
 	int		capacity;
 	int		*a;
@@ -158,7 +169,15 @@ void	ft_exit(t_piles *piles);
 void	ft_free_piles(t_piles *piles);
 
 /* ---------------------- prototypes: utils_input.c */
-void	ft_input_args(int argc, char **argv, t_piles *piles);
+void	ft_input_args(int argc, char **argv, t_piles *piles, int options_number);
+void	ft_input_args_file(int file_name, t_piles *piles, char **argv);
+
+/* ---------------------- prototypes: utils_options.c.c */
+int		ft_have_option(int option, t_piles *piles);
+void	ft_vn_activate(t_piles *piles);
+int		ft_check_double_option(int option, int options, t_piles *piles);
+int		ft_check_option(int argc, char **argv, int *file_name, t_piles *piles);
+int		ft_options_number(int options);
 
 /* ---------------------- prototypes: utils_show.c.c */
 void	ft_show_piles(t_piles *piles);
