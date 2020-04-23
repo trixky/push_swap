@@ -4,7 +4,7 @@ void	ft_check_argv_input(t_piles *piles)
 {
 	int i;
 	int j;
-	
+
 	i = -1;
 	while (++i < piles->capacity)
 	{
