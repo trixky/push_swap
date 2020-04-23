@@ -13,13 +13,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-
-
-/* a ENLEVER !!! */
 # include <stdio.h>
 # include <time.h>
-# include <sys/time.h>
-/* a ENLEVER ^^^ */
 
 # define INT_MAX				2147483647
 # define INT_MIN				-2147483648

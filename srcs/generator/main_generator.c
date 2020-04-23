@@ -1,9 +1,9 @@
 #include "push_swap.h"
 
-int ft_is_already_taken(int *array, int len, int nbr)
+int	ft_is_already_taken(int *array, int len, int nbr)
 {
 	int i;
-	
+
 	i = -1;
 	while (++i < len)
 		if (array[i] == nbr)
@@ -11,7 +11,16 @@ int ft_is_already_taken(int *array, int len, int nbr)
 	return (FALSE);
 }
 
-int main(int argc, char **argv)
+void	ft_generator(int *argc, char **argv, int *len, int **number_used)
+{
+	if (*argc != 2)
+		ft_exit(NULL);
+	*len = ft_str_to_int(NULL, argv[1]);
+	if ((*number_used = malloc(sizeof(int) * *len)) == NULL)
+		ft_exit(NULL);
+}
+
+int	main(int argc, char **argv)
 {
 	int i;
 	int rdm;
@@ -20,11 +29,8 @@ int main(int argc, char **argv)
 
 	srand(time(NULL));
 	rdm = rand() % SEED_GENERATOR;
-	if (argc != 2)
-		ft_exit(NULL);
-	len = ft_str_to_int(NULL, argv[1]);
-	if ((number_used = malloc(sizeof(int) * len)) == NULL)
-		ft_exit(NULL);
+	number_used = NULL;
+	ft_generator(&argc, argv, &len, &number_used);
 	i = -1;
 	while (++i < len)
 	{

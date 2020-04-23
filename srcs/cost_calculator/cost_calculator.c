@@ -3,7 +3,7 @@
 void	ft_start_test(t_piles *piles, const int silence_mod)
 {
 	int	i;
-	
+
 	i = -1;
 	while (++i < piles->capacity)
 	{
@@ -20,7 +20,7 @@ int		ft_stop_test(t_piles *piles, const int silence_mod)
 {
 	int	i;
 	int	cost;
-	
+
 	i = -1;
 	cost = piles->nbr_operation - piles->nbr_operation_temp;
 	while (++i < piles->capacity)
