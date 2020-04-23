@@ -14,6 +14,7 @@ void	ft_init_brute_force_array(t_piles *piles)
 
 void	ft_init(t_piles *piles)
 {
+	piles->time = 0;
 	piles->silence_mod = FALSE;
 	piles->capacity = 0;
 	piles->a = NULL;

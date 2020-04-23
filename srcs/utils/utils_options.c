@@ -7,8 +7,21 @@ int		ft_have_option(int option, t_piles *piles)
 
 void	ft_vn_activate(t_piles *piles)
 {
+	if ((piles->options / OPTION_N) % 10 != 0)
+	{
+		piles->time++;
+		if (ft_have_option(OPTION_C, piles))
+			write(1, KCYN, ft_strlen(KCYN));
+		write(STDOUT_FILENO, "\t", 1);
+		ft_putnbr(piles->time);
+		write(STDOUT_FILENO, "\n", 1);
+		if (ft_have_option(OPTION_C, piles))
+			write(1, KNRM, ft_strlen(KNRM));
+	}
 	if ((piles->options / OPTION_V) % 10 != 0)
+	{
 		ft_show_piles(piles);
+	}
 }
 
 int		ft_check_double_option(int option, int options, t_piles *piles)
