@@ -60,8 +60,9 @@ int		ft_input_args_insert_number_file(char *file_name,
 	k = 0;
 	if ((fd = open(file_name, O_RDONLY)) <= 0)
 		ft_exit(piles);
-	if ((ret = read(fd, buffer_file, BUFFER_FILE_SIZE)) >=
-			BUFFER_FILE_SIZE)
+	ret = read(fd, buffer_file, BUFFER_FILE_SIZE);
+	close(fd);
+	if (ret >= BUFFER_FILE_SIZE || ret < 0)
 		ft_exit(piles);
 	while (i < ret)
 	{

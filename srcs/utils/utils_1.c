@@ -56,7 +56,7 @@ int		ft_str_to_int(t_piles *piles, char *str)
 		{
 			number *= 10;
 			number += sign * (str[i++] - 48);
-			if (number > INT_MAX)
+			if (number > INT_MAX || number < INT_MIN)
 				ft_exit(piles);
 		}
 		if (str[i] != '\0' && str[i] != ' ' && (str[i] < '0' || str[i] > '9'))
