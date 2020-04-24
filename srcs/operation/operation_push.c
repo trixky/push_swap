@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operation_push.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabois <mabois@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/24 10:41:20 by mabois            #+#    #+#             */
+/*   Updated: 2020/04/24 10:41:23 by mabois           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_operation_push_pa(t_piles *piles)
 {
 	int i;
-	
+
 	if (piles->b_len > 0)
 	{
 		i = piles->capacity;
@@ -27,7 +39,7 @@ void	ft_operation_push_pa(t_piles *piles)
 void	ft_operation_push_pb(t_piles *piles)
 {
 	int i;
-	
+
 	if (piles->a_len > 0)
 	{
 		i = piles->capacity;

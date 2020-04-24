@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operation_rotate.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabois <mabois@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/24 10:41:39 by mabois            #+#    #+#             */
+/*   Updated: 2020/04/24 10:41:42 by mabois           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_operation_rotate_ra(t_piles *piles)
 {
 	int	i;
 	int	save_first;
-	
+
 	if (piles->a_len > 1)
 	{
 		i = -1;
@@ -25,7 +37,7 @@ void	ft_operation_rotate_rb(t_piles *piles)
 {
 	int	i;
 	int	save_first;
-	
+
 	if (piles->b_len > 1)
 	{
 		i = -1;
@@ -45,7 +57,7 @@ void	ft_operation_rotate_rb(t_piles *piles)
 void	ft_operation_rotate_rr(t_piles *piles)
 {
 	int initial_silent_mod;
-	
+
 	initial_silent_mod = piles->silence_mod;
 	piles->silence_mod = TRUE;
 	ft_operation_rotate_ra(piles);

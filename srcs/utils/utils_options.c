@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_options.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabois <mabois@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/24 10:44:39 by mabois            #+#    #+#             */
+/*   Updated: 2020/04/24 10:44:40 by mabois           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int		ft_have_option(int option, t_piles *piles)
@@ -48,29 +60,20 @@ int		ft_check_option(int argc, char **argv, int *file_name, t_piles *piles)
 	i = 0;
 	max_option = 6;
 	options = 0;
-	while (++i <= max_option && i < argc)
-	{
-		if (ft_strlen(argv[i]) == 2 && argv[i][0] == '-')
-		{
-			if (argv[i][1] == 'v')
-				options += ft_check_double_option(OPTION_V, options, piles);
-			else if (argv[i][1] == 'c')
-				options += ft_check_double_option(OPTION_C, options, piles);
-			else if (argv[i][1] == 'h')
-				options += ft_check_double_option(OPTION_H, options, piles);
-			else if (argv[i][1] == 'n')
-				options += ft_check_double_option(OPTION_N, options, piles);
-			else if (argv[i][1] == 'f' && argc > i + 1)
-			{
-				options += ft_check_double_option(OPTION_F, options, piles);
-				*file_name = ++i;
-			}
-			else
-				break ;
-		}
+	while (++i <= max_option && i < argc && ft_strlen(argv[i]) == 2 &&
+			argv[i][0] == '-')
+		if (argv[i][1] == 'v')
+			options += ft_check_double_option(OPTION_V, options, piles);
+		else if (argv[i][1] == 'c')
+			options += ft_check_double_option(OPTION_C, options, piles);
+		else if (argv[i][1] == 'h')
+			options += ft_check_double_option(OPTION_H, options, piles);
+		else if (argv[i][1] == 'n')
+			options += ft_check_double_option(OPTION_N, options, piles);
+		else if (argv[i][1] == 'f' && argc > i + 1 && (*file_name = ++i) > 0)
+			options += ft_check_double_option(OPTION_F, options, piles);
 		else
 			break ;
-	}
 	if (*file_name != 0 && i < argc)
 		ft_exit(piles);
 	return (options);

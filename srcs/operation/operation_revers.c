@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operation_revers.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabois <mabois@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/24 10:41:29 by mabois            #+#    #+#             */
+/*   Updated: 2020/04/24 10:41:32 by mabois           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_operation_revers_rra(t_piles *piles)
 {
 	int	i;
 	int	save_first;
-	
+
 	if (piles->a_len > 1)
 	{
 		i = piles->capacity;
@@ -25,7 +37,7 @@ void	ft_operation_revers_rrb(t_piles *piles)
 {
 	int	i;
 	int	save_first;
-	
+
 	if (piles->b_len > 1)
 	{
 		i = piles->capacity;
@@ -45,12 +57,12 @@ void	ft_operation_revers_rrb(t_piles *piles)
 void	ft_operation_revers_rrr(t_piles *piles)
 {
 	int initial_silent_mod;
-	
+
 	initial_silent_mod = piles->silence_mod;
 	piles->silence_mod = TRUE;
 	ft_operation_revers_rra(piles);
 	ft_operation_revers_rrb(piles);
-	piles->silence_mod = initial_silent_mod;	
+	piles->silence_mod = initial_silent_mod;
 	piles->nbr_operation--;
 	if (!piles->silence_mod)
 	{

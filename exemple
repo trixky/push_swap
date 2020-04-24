@@ -1,3 +1,0 @@
-ARG=$(./generator 50); ./push_swap $ARG | ./checker $ARG
-
-ARG=$(./generator 50); ./push_swap $ARG | cat -n

@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_tools_1.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabois <mabois@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/24 10:43:11 by mabois            #+#    #+#             */
+/*   Updated: 2020/04/24 10:43:13 by mabois           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int		ft_first_is_the_smallest(t_piles *piles, const int pile)
 {
 	int i;
 	int	first;
-	
+
 	i = -1;
 	first = (pile == PILE_A ? piles->a[0] : piles->b[0]);
 	while (++i < (pile == PILE_A ? piles->a_len : piles->b_len))
@@ -17,7 +29,7 @@ int		ft_first_is_the_greatest(t_piles *piles, const int pile)
 {
 	int i;
 	int	first;
-	
+
 	i = -1;
 	first = (pile == PILE_A ? piles->a[0] : piles->b[0]);
 	while (++i < (pile == PILE_A ? piles->a_len : piles->b_len))
@@ -26,17 +38,19 @@ int		ft_first_is_the_greatest(t_piles *piles, const int pile)
 	return (TRUE);
 }
 
-int		ft_is_sorted_down(t_piles *piles, const int pile, const int silence_mod)
+int		ft_is_sorted_down(t_piles *piles,
+		const int pile, const int silence_mod)
 {
 	int	i;
-	
+
 	i = -1;
 	while (++i + 1 < (pile == PILE_A ? piles->a_len : piles->b_len))
 		if ((pile == PILE_A ? piles->a[i] : piles->b[i]) >
 				(pile == PILE_A ? piles->a[i + 1] : piles->b[i + 1]))
 		{
 			if (silence_mod == FALSE)
-				printf("pile %c n'est pas trille en down\n", (pile == PILE_A ? 'a' : 'b'));
+				printf("pile %c n'est pas trille en down\n",
+				(pile == PILE_A ? 'a' : 'b'));
 			return (FALSE);
 		}
 	if (silence_mod == FALSE)
@@ -44,20 +58,22 @@ int		ft_is_sorted_down(t_piles *piles, const int pile, const int silence_mod)
 	return (TRUE);
 }
 
-int		ft_is_sorted_up(t_piles *piles, const int pile, const int silence_mod)
+int		ft_is_sorted_up(t_piles *piles,
+		const int pile, const int silence_mod)
 {
 	int	i;
-	
+
 	i = -1;
 	while (++i + 1 < (pile == PILE_A ? piles->a_len : piles->b_len))
 		if ((pile == PILE_A ? piles->a[i] : piles->b[i]) <
 				(pile == PILE_A ? piles->a[i + 1] : piles->b[i + 1]))
 		{
 			if (silence_mod == FALSE)
-				printf("pile %c n'est pas trille en up\n", (pile == PILE_A ? 'a' : 'b'));	
+				printf("pile %c n'est pas trille en up\n",
+				(pile == PILE_A ? 'a' : 'b'));
 			return (FALSE);
 		}
 	if (silence_mod == FALSE)
-		printf("pile %c est trille en up\n", (pile == PILE_A ? 'a' : 'b'));	
+		printf("pile %c est trille en up\n", (pile == PILE_A ? 'a' : 'b'));
 	return (TRUE);
 }

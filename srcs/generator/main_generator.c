@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_generator.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabois <mabois@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/24 10:39:32 by mabois            #+#    #+#             */
+/*   Updated: 2020/04/24 10:39:34 by mabois           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int	ft_is_already_taken(int *array, int len, int nbr)
+int		ft_is_already_taken(int *array, int len, int nbr)
 {
 	int i;
 
@@ -11,7 +23,13 @@ int	ft_is_already_taken(int *array, int len, int nbr)
 	return (FALSE);
 }
 
-void	ft_generator(int *argc, char **argv, int *len, int **number_used)
+int		ft_init_rand(void)
+{
+	srand(time(NULL));
+	return (rand() % SEED_GENERATOR);
+}
+
+void	ft_init_generator(int *argc, char **argv, int *len, int **number_used)
 {
 	if (*argc != 2)
 		ft_exit(NULL);
@@ -20,22 +38,21 @@ void	ft_generator(int *argc, char **argv, int *len, int **number_used)
 		ft_exit(NULL);
 }
 
-int	main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	int i;
 	int rdm;
 	int len;
 	int *number_used;
 
-	srand(time(NULL));
-	rdm = rand() % SEED_GENERATOR;
-	number_used = NULL;
-	ft_generator(&argc, argv, &len, &number_used);
+	rdm = ft_init_rand();
+	ft_init_generator(&argc, argv, &len, &number_used);
 	i = -1;
 	while (++i < len)
 	{
 		while (ft_is_already_taken(number_used, len, rdm % RAND_MODULO))
-			rdm += ((((7 * 8 * rdm) / 2) + 9) * 789 + 333) * (rand() % SEED_GENERATOR);
+			rdm += ((((7 * 8 * rdm) / 2) + 9) * 789 + 333) *
+			(rand() % SEED_GENERATOR);
 		number_used[i] = rdm % RAND_MODULO;
 	}
 	i = -1;

@@ -19,11 +19,16 @@ COMMON_SRCS =	srcs/cost_calculator/cost_calculator.c\
 				srcs/operation/operation_swap.c\
 				srcs/prog/checker.c\
 				srcs/prog/init.c\
+				srcs/prog/tools_main_checker.c\
 				srcs/sorting/brute_force_sort.c\
 				srcs/sorting/insertion_sort.c\
 				srcs/sorting/sort_tools_1.c\
 				srcs/sorting/sort_tools_2.c\
 				srcs/sorting/sort_tools_3.c\
+				srcs/sorting/sort_tools_4.c\
+				srcs/sorting/sort_tools_5.c\
+				srcs/sorting/sort_tools_6.c\
+				srcs/sorting/tools_brute_force_sorte.c\
 				srcs/utils/utils_1.c\
 				srcs/utils/utils_2.c\
 				srcs/utils/utils_exit.c\
@@ -35,7 +40,9 @@ CHECKER_OBJ = $(COMMON_SRCS:.c=.o) $(CHECKER_SRCS:.c=.o)
 PUSH_SWAP_OBJ = $(COMMON_SRCS:.c=.o) $(PUSH_SWAP_SRCS:.c=.o)
 GENERATOR_OBJ = $(COMMON_SRCS:.c=.o) $(GENERATOR_SRCS:.c=.o)
 
-FLAGS= -Wall -Wextra -Werror -fsanitize=address -g3
+FLAGS = -Wall -Wextra -Werror
+
+FSANITIZE = -fsanitize=address -g3
 
 GCC = gcc
 
@@ -54,7 +61,7 @@ $(NAME_GENERATOR): $(GENERATOR_OBJ)
 	${CC} ${FLAGS} ${INCLUDE} ${GENERATOR_OBJ} -o $@
 
 clean:
-	rm -rf $(CHECKER_OBJ) $(PUSH_SWAP_OBJ)
+	rm -rf $(CHECKER_OBJ) $(PUSH_SWAP_OBJ) $(GENERATOR_OBJ)
 
 fclean: clean
 	rm -rf ${NAME_CHECKER} ${NAME_PUSH_SWAP} ${NAME_GENERATOR}
