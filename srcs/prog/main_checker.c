@@ -51,8 +51,8 @@ void	ft_read_buffer(t_piles *piles, char *buffer, int *buffer_len)
 	while (*buffer_len > 2)
 		if (buffer[2] == '\n')
 			ft_read_buffer_norme_1(piles, buffer, buffer_len);
-		else if (*buffer_len > 3 && buffer[0] == 'r' &&
-				buffer[1] == 'r' && buffer[3] == '\n')
+		else if (*buffer_len >= 3 && buffer[0] == 'r' &&
+				buffer[1] == 'r')
 			ft_read_buffer_norme_2(piles, buffer, buffer_len);
 		else
 			ft_exit(piles);
