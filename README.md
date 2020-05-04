@@ -12,7 +12,6 @@ A fast stack sorter, with a limited instruction set.
 - At the end, all numbers must be sorted in stack A, and stack B must be empty.
 - Find the shortest possible instruction sequence.
 
-
 ![Image description](https://i.ibb.co/WFhBhQ2/iii-3-1.png)
 
 ## Instruction Set
