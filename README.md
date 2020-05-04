@@ -7,14 +7,15 @@ A fast stack sorter, with a limited instruction set.
 ## Rules
 
 - Numbers in stack can be moved only with a limited instruction set.
-- You have only two stacks (A and B) to manipulate numbers.
+- Only two stacks (A and B) to manipulate numbers.
 - The unsorted stack is received in stack A.
 - At the end, all numbers must be sorted in stack A, and stack B must be empty.
 - Find the shortest possible instruction sequence.
 
+
 ![Image description](https://i.ibb.co/WFhBhQ2/iii-3-1.png)
 
-# Instruction Set
+## Instruction Set
 
 - SA : Swap the first two elements at the top of stack A.
 - SB : Swap the first two elements at the top of stack B.
