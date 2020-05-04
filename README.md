@@ -1,6 +1,6 @@
 # push_swap
 
-A simple fast stack sorter, with a limited set of instructions.
+A fast stack sorter, with the shortest possible instruction sequence.
 
 ![Recordit GIF](https://i.ibb.co/RgGT3Ss/ezgif-com-crop.gif)
 
@@ -11,9 +11,10 @@ A simple fast stack sorter, with a limited set of instructions.
 - The stack to be sorted is received in stack A.
 - At the end, all the numbers must be sorted in stack A and stack B must be empty.
 
-![Image description](https://i.ibb.co/WFhBhQ2/iii-3-1.png)
 
 # Instruction set
+
+![Image description](https://i.ibb.co/WFhBhQ2/iii-3-1.png)
 
 - SA : Swap the first two elements at the top of stack A.
 - SB : Swap the first two elements at the top of stack B.
