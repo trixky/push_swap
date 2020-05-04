@@ -6,10 +6,10 @@ A fast stack sorter, with the shortest possible instruction sequence.
 
 ## Rules
 
-- Numbers in stack can be moved only with limited instruction set.
+- Numbers in stack can be moved only with a limited instruction set.
 - You have only two stacks (A and B) to manipulate numbers.
-- The stack to be sorted is received in stack A.
-- At the end, all the numbers must be sorted in stack A and stack B must be empty.
+- The unsorted stack is received in stack A.
+- At the end, all numbers must be sorted in stack A, and stack B must be empty.
 - Find the shortest possible instruction sequence.
 
 ![Image description](https://i.ibb.co/WFhBhQ2/iii-3-1.png)
@@ -23,12 +23,12 @@ A fast stack sorter, with the shortest possible instruction sequence.
 - PA : Take the first element at the top of B and put it on A.
 - PB : Take the first element at the top of A and put it on B.
 
-- RA : Shifts all the elements of stack A up one position.
-- RB : Shifts all the elements of stack B up one position.
+- RA : Shifts all elements of stack A up one position.
+- RB : Shifts all elements of stack B up one position.
 - RR : RA and RB at the same time.
 
-- RRA : Shifts all the elements of stack A down one position.
-- RRB : Shifts all the elements of stack B down one position.
+- RRA : Shifts all elements of stack A down one position.
+- RRB : Shifts all elements of stack B down one position.
 - RRR : RRA and RRB at the same time.
 
 ## Usage
@@ -43,7 +43,7 @@ make
 ./push_swap 2 9 8 1 4 | ./checker 2 9 8 1 4
 
 # generate a random stack
-./generator 10); echo ARG
+ARG=$(./generator 10); echo $ARG
 
 # check the instruction sequence with the random stack
 ARG=$(./generator 200); ./push_swap $ARG | ./checker $ARG
