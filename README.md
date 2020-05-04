@@ -10,11 +10,9 @@ A fast stack sorter, with the shortest possible instruction sequence.
 - You have only two stacks (A and B) to manipulate numbers.
 - The stack to be sorted is received in stack A.
 - At the end, all the numbers must be sorted in stack A and stack B must be empty.
+- Find the shortest possible instruction sequence.
 
-
-# Instruction set
-
-![Image description](https://i.ibb.co/WFhBhQ2/iii-3-1.png)
+# Instruction Set
 
 - SA : Swap the first two elements at the top of stack A.
 - SB : Swap the first two elements at the top of stack B.
@@ -31,6 +29,7 @@ A fast stack sorter, with the shortest possible instruction sequence.
 - RRB : Shifts all the elements of stack B down one position.
 - RRR : RRA and RRB at the same time.
 
+![Image description](https://i.ibb.co/WFhBhQ2/iii-3-1.png)
 
 ## Usage
 
