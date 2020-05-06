@@ -1,6 +1,6 @@
 # push_swap
 
-A fast stack sorter, with a limited instruction set.
+A fast stack sorter, with a limited instruction set and homemade algorithms.
 
 ![Recordit GIF](https://i.ibb.co/RgGT3Ss/ezgif-com-crop.gif)
 
