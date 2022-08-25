@@ -2,7 +2,7 @@
 
 A fast stack sorter, with a limited instruction set and homemade algorithms.
 
-![Recordit GIF](https://i.ibb.co/RgGT3Ss/ezgif-com-crop.gif)
+![Recordit GIF](https://github.com/trixky/push_swap/blob/master/.demo/demo.gif?raw=true)
 
 ## Rules
 
@@ -12,7 +12,7 @@ A fast stack sorter, with a limited instruction set and homemade algorithms.
 - At the end, all numbers must be sorted in stack A, and stack B must be empty.
 - Find the shortest possible instruction sequence.
 
-![Image description](https://i.ibb.co/WFhBhQ2/iii-3-1.png)
+![Image description](https://github.com/trixky/push_swap/blob/master/.demo/demo.png?raw=true)
 
 ## Instruction Set
 
